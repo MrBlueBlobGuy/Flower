@@ -1,0 +1,12 @@
+vendor/*
+**/bin/
+**/bin-int/
+**/obj/
+
+**.sln
+**.vcxproj
+**.vcxproj.user
+**.vcxproj.filters
+.vs/
+
+installs/
