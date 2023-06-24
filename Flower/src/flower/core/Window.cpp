@@ -42,6 +42,8 @@ void Flower::Window::loop() {
 		glfwSwapBuffers(this->m_window);
 	}
 
+
 	glfwDestroyWindow(this->m_window);
 	glfwTerminate();
+	// delete(this->m_title);		IDK how to delete this pointer. If I delete it the program just crashes
 }

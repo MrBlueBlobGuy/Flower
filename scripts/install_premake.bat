@@ -27,7 +27,6 @@ ren "%destination%\premake-5.0.0-beta2-src" "premake5"
 echo building premake
 
 pushd "~dp0\..\vendor\premake5"
-"C:\program files (x86)\microsoft visual studio\2019\community\Common7\Tools\VsDevCmd"
 call nmake -f Bootstrap.mak windows
 popd
 echo Done!

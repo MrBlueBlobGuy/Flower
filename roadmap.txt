@@ -1,0 +1,11 @@
+0.0.3.8 - Min - (dp 12/06/2023)
+	- Add compile shader support (d)
+
+0.0.3.9 - Min -(dp 15/06/2023)
+	- Update license (d)
+	
+0.0.4.0 - Maj - (t 21/06/2023)
+	- CHANGE THE CODE STRUCTURE FROM A HUGE MESS TO A LITTLE LESS OF A MESS (d)
+	- PLEASE USE RAII FOR GOD SAKE
+	- setup imgui, no one can use it without a proper interface
+	- get ready for vulkan (tc)

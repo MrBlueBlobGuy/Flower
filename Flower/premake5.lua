@@ -7,6 +7,8 @@ project "Flower"
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
+    defines "_SOLUTIONDIR='%{wks.location}'"
+    defines "_CRT_SECURE_NO_WARNINGS"
     files {
         "src/**.cpp",
         "src/**.h"
@@ -15,12 +17,14 @@ project "Flower"
     includedirs{
         "src", 
         "%{include_dirs.GLFW}",
-        "%{include_dirs.GLAD}"
+        "%{include_dirs.GLAD}",
+        "%{include_dirs.GLM}"
     }
 
     links{
         "GLFW",
-        "GLAD"
+        "GLAD",
+        "GLM"
     }
 
     filter "system:windows"

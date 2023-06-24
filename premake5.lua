@@ -22,6 +22,7 @@ group "Dependencies"
 	--include "vendor/premake5"
 	include "Flower/vendor/GLFW"
 	include "Flower/vendor/Glad"
+	include "Flower/vendor/glm"
 group ""
 
 group "Core"

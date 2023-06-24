@@ -1,20 +1,24 @@
 #pragma once
+
 #ifndef OPENGL_SHADER_H
 #define OPENGL_SHADER_H
 
+#include <glad/glad.h>
+
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
 #include "Shader.h"
-#include "utils.h"
-
-#include <cstdlib>
-
-#define USER_DIRECTORY std::getenv("USER")
 
 namespace Flower {
-	class opengl_shader:Flower::Shader {
-	private:
+	class openglShader :public Flower::Shader {
 	public:
-		unsigned int generate_program(std::string shader);
-		void terminate_program();
+		openglShader(const char* vertexPath, const char* fragmentPath);
+		void use();
+		void setBool(const std::string& name, bool value) const;
+		void setInt(const std::string& name, int value) const;
+		void setFloat(const std::string& name, float value) const;
 	};
 }
 
