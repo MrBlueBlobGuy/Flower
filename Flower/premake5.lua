@@ -23,8 +23,7 @@ project "Flower"
 
     links{
         "GLFW",
-        "GLAD",
-        "GLM"
+        "GLAD"
     }
 
     filter "system:windows"

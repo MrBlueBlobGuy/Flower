@@ -16,8 +16,9 @@ namespace Flower{
 		BaseVBO();
 		~BaseVBO();
 
-		glm::vec3* vertex_data;		//	With the vertex and texture mapping and indices in the format V3 position
-		
+		unsigned int vertex_count = 3;
+		glm::vec3* vertex_data{ new glm::vec3[vertex_count]{} };		//	With the vertex and texture mapping and indices in the format V3 position
+
 		virtual void get_vertex_data();
 		GLuint getVBO();
 	private:

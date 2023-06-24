@@ -19,10 +19,8 @@ Flower::BaseVBO::~BaseVBO() {
 }
 
 void Flower::TriangleVBO::get_vertex_data() {
-	this->vertex_data = new glm::vec3{
-		glm::vec3(-0.5, 0.5, 0.0),
-		glm::vec3( 0.5, 0.5, 0.0),
-		glm::vec3( 0.0, 0.5, 0.0)
-	};
+	this->vertex_data[0] = glm::vec3(-0.5f, 0.5f, 0.0f);
+	this->vertex_data[1] = glm::vec3( 0.5f,-0.5f, 0.0f);
+	this->vertex_data[2] = glm::vec3( 0.0f, 0.0f, 0.0f);
 }
 
