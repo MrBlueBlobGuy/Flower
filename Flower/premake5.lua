@@ -7,20 +7,26 @@ project "Flower"
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
-    defines "_SOLUTIONDIR='%{wks.location}'"
+    defines 'WORKING_DIR="$(SolutionDir)/Flower/resources"'
     defines "_CRT_SECURE_NO_WARNINGS"
     files {
-        "src/**.cpp",
-        "src/**.h"
+        "src/flower/**.cpp",
+        "src/flower/**.h",
+        "assets/flower/**.glsl",
+        "assets/flower/**.hlsl",
+        "assets/flower/**.shader",
+        "assets/flower/**.frag",
+        "assets/flower/**.vert",
+        "assets/flower/**.vs",
+        "assets/flower/**.fs"
     }
-
     includedirs{
         "src", 
         "%{include_dirs.GLFW}",
         "%{include_dirs.GLAD}",
-        "%{include_dirs.GLM}"
+        "%{include_dirs.GLM}",
+        "%{include_dirs.NumCpp}"
     }
-
     links{
         "GLFW",
         "GLAD"

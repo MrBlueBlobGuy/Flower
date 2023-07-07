@@ -8,17 +8,19 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <map>
 
 #include "Shader.h"
 
 namespace Flower {
-	class openglShader :public Flower::Shader {
+	static inline std::map<std::string, Flower::Shader> shaders;
+	class openglShader : public Flower::Shader {
 	public:
-		openglShader(const char* vertexPath, const char* fragmentPath);
+		openglShader(const char* vertexPath, const char* fragmentPath, const char* name);
 		void use();
-		void setBool(const std::string& name, bool value) const;
-		void setInt(const std::string& name, int value) const;
-		void setFloat(const std::string& name, float value) const;
+		void set_bool(const std::string& name, bool value) const;
+		void set_int(const std::string& name, int value) const;
+		void set_float(const std::string& name, float value) const;
 	};
 }
 

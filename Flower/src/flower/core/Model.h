@@ -17,8 +17,6 @@ namespace Flower {
 		unsigned int tex_id;
 		std::string vao_name;
 		GLuint vao;
-		
-
 	};
 }
 #endif // !MODEL_H

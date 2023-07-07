@@ -1,12 +1,14 @@
 #include "Window.h"
-
 #include "Application.h"
+#include "utils.h"
+
+#include <iostream>
 
 Flower::Window::Window(GLuint height, GLuint width, const char* title) {
 	this->m_width = width;
 	this->m_height = height;
 	this->m_title = title;
-
+	std::cout << utils::working_dir << std::endl;
 	if (this->run()) this->loop();
 }
 

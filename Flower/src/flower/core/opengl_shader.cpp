@@ -1,6 +1,6 @@
 #include "opengl_shader.h"
 
-Flower::openglShader::openglShader(const char* vertex_path, const char* fragment_path) {
+Flower::openglShader::openglShader(const char* vertex_path, const char* fragment_path, const char* name) {
 	std::string vertex_shader_source_str, fragment_shader_source_str;
 	std::ifstream vertex_shader_file, fragment_shader_file;
 
@@ -73,23 +73,25 @@ Flower::openglShader::openglShader(const char* vertex_path, const char* fragment
 	// delete the shaders as they're linked into our program now and no longer necessary
 	glDeleteShader(vertex);
 	glDeleteShader(fragment);
+
+	 Flower::shaders[name] = *this;
 }
 
 void Flower::openglShader::use() {
 	glUseProgram(ID);
 }
 
-void Flower::openglShader::setBool(const std::string& name, bool value) const
+void Flower::openglShader::set_bool(const std::string& name, bool value) const
 {
 	glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value);
 }
 
-void Flower::openglShader::setInt(const std::string& name, int value) const
+void Flower::openglShader::set_int(const std::string& name, int value) const
 {
 	glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
 }
 
-void Flower::openglShader::setFloat(const std::string& name, float value) const
+void Flower::openglShader::set_float(const std::string& name, float value) const
 {
 	glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
 }

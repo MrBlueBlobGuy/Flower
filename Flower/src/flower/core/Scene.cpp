@@ -2,7 +2,7 @@
 #include "Application.h"
 
 void Flower::Scene::changeScene(Flower::Scene next_scene) {
-	Flower::Application::CurrentScene = next_scene;
+	Flower::Application::s_CurrentScene = next_scene;
 }
 
 void Flower::Scene::render() {

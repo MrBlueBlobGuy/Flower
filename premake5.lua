@@ -23,6 +23,7 @@ group "Dependencies"
 	include "Flower/vendor/GLFW"
 	include "Flower/vendor/Glad"
 	include "Flower/vendor/glm"
+	include "Flower/vendor/NumCpp"
 group ""
 
 group "Core"

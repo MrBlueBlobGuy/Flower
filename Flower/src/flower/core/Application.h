@@ -5,9 +5,9 @@
 namespace Flower {
 	class Application {
 	public:
-		Application(int width, int height, const char* title);
+		static inline Flower::Scene s_CurrentScene = Scene();
+		Application(int width, int height, const char* title, Flower::Scene CurrentScene);
 		Flower::Window* getWindow();
-		static inline Flower::Scene CurrentScene = Scene();
 		static void Update();
 		static void terminate() {
 			delete(Flower::Application::m_window);
